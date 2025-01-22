@@ -92,17 +92,19 @@ function isEmpty(value){
 
 function forwardToId(params){
 
-    location.href = "/dowoddladziwek/id?" + params
+    location.href = "/yObywatel/id?" + params
 
 }
 
-var guide = document.querySelector(".guide_holder");
-guide.addEventListener('click', () => {
+var guides = document.querySelectorAll(".guide_holder");
 
-    if (guide.classList.contains("unfolded")){
-        guide.classList.remove("unfolded");
-    }else{
-        guide.classList.add("unfolded");
-    }
-
-})
+// Dodaj event listener dla każdego guide_holder
+guides.forEach(function(guide) {
+    guide.addEventListener('click', () => {
+        if (guide.classList.contains("unfolded")) {
+            guide.classList.remove("unfolded");
+        } else {
+            guide.classList.add("unfolded");
+        }
+    });
+});
