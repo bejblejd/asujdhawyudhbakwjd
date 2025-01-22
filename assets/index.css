@@ -146,7 +146,7 @@ html{
 }
 
 .logo{
-    width: 100px;
+    width: 300px;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -330,7 +330,7 @@ input:focus{
     display: none;
 }
 
-.upload_uploaded{
+.upload_uploaded{   
     display: none;
 }
 
