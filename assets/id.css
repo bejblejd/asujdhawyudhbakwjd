@@ -121,7 +121,6 @@ p{
     display: block;
     z-index: -1;
     pointer-events: none;
-    box-shadow: 0px 0px 5px rgb(224, 224, 224);
     border-radius: 15px 15px 0px 0px;
 }
 
@@ -163,7 +162,6 @@ p{
 }
 
 .inset{
-    box-shadow: inset 0px 0px 20px white;
     background-color: transparent;
     position: absolute;
     top: 5%;
@@ -180,7 +178,6 @@ p{
 .id_own_image{
     pointer-events: none;
     filter: grayscale(1);
-    box-shadow: 0px 0px 5px white;
     position: absolute;
     top: 5%;
     left: 7.5%;
