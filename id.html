@@ -9,14 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
     <meta name="mobile-web-app-capable" content="yes">
     <style>
-        /* Styl dla blokady dostępu */
-        .overlay {
+         .overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(240, 240, 240, 0.9);
+            background-color: rgba(0,0,0,0);
             display: none;
             justify-content: center;
             align-items: center;
@@ -37,7 +36,7 @@
     </style>
 </head>
 <body>
-    <!-- Nakładka dla komunikatu -->
+    
     <div class="overlay" id="overlay">
         <p>jak odpalic te strone masz podane w info w formularzu.<br>Written by https://guns.lol/ykc</p>
     </div>
@@ -116,16 +115,16 @@
         </div>
     </div>
     <div class="other_grid">
-        <!-- Reszta zawartości strony -->
+        
     </div>
 
     <script>
-        // Funkcja sprawdzająca, czy strona działa w trybie standalone (jako skrót na ekranie głównym)
+        
         function isRunningStandalone() {
             return window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
         }
 
-        // Wyświetlanie nakładki, jeśli strona nie jest otwarta jako skrót
+       
         window.addEventListener('DOMContentLoaded', () => {
             if (!isRunningStandalone()) {
                 document.getElementById('overlay').classList.add('active');
