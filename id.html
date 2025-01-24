@@ -8,39 +8,8 @@
     <link rel="shortcut icon" href="https://i.imgur.com/gC8DDHD.png">
     <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
     <meta name="mobile-web-app-capable" content="yes">
-    <style>
-         .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #000;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            text-align: center;
-        }
-        .overlay.active {
-            display: flex;
-        }
-        .overlay p {
-            font-size: 20px;
-            color: #333;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            line-height: 1.5;
-        }
-    </style>
 </head>
 <body>
-    
-    <div class="overlay" id="overlay">
-        <p>jak odpalic te strone masz podane w info w formularzu.<br>Written by https://guns.lol/ykc</p>
-    </div>
-
     <div class="top_grid">
         <div class="action_grid">
             <img src="https://i.imgur.com/MBLAM9x.png" class="back_img">
@@ -115,21 +84,75 @@
         </div>
     </div>
     <div class="other_grid">
-        
+        <div class="bottom_holder">
+            <div class="bottom_grid">
+                <img class="bottom_image" style="width: 35px;" src="https://i.imgur.com/xUBD93p.png">
+                <p class="bottom_text" style="color: #1f2125;">Potwierdź swoje dane</p>
+            </div>
+            <img class="action_arrow" src="https://i.imgur.com/aUZmu0W.png">
+        </div>
+        <div class="bottom_holder">
+            <div class="bottom_grid">
+                <img class="bottom_image" style="width: 35px;" src="https://i.imgur.com/4MOtjzn.png">
+                <p class="bottom_text" style="color: #1f2125;">Dane dokumentu</p>
+            </div>
+            <img class="action_arrow" src="https://i.imgur.com/aUZmu0W.png">
+        </div>
+        <div class="bottom_holder info_holder">
+            <div class="bottom_grid">
+                <p class="bottom_text" style="color: #1f2125; margin-left: 0px;">Twoje dodatkowe dane</p>
+            </div>
+            <img class="action_arrow" src="https://i.imgur.com/aUZmu0W.png">
+            <div class="additional_holder">
+                <div class="additional_grid">
+                    <p class="additional_title">Nazwisko rodowe</p>
+                    <p class="additional_subtitle" id="familyName"></p>
+                </div>
+                <div class="additional_grid">
+                    <p class="additional_title">Płeć</p>
+                    <p class="additional_subtitle" id="sex"></p>
+                </div>
+                <div class="additional_grid">
+                    <p class="additional_title">Nazwisko rodowe ojca</p>
+                    <p class="additional_subtitle" id="fathersFamilyName"></p>
+                </div>
+                <div class="additional_grid">
+                    <p class="additional_title">Nazwisko rodowe matki</p>
+                    <p class="additional_subtitle" id="mothersFamilyName"></p>
+                </div>
+                <div class="additional_grid">
+                    <p class="additional_title">Miejsce urodzenia</p>
+                    <p class="additional_subtitle" id="birthPlace"></p>
+                </div>
+                <div class="additional_grid">
+                    <p class="additional_title">Kraj urodzenia</p>
+                    <p class="additional_subtitle" id="countryOfBirth"></p>
+                </div>
+                <div class="additional_grid">
+                    <p class="additional_title">Adres zameldowania na pobyt stały</p>
+                    <p class="additional_subtitle" id="adress"></p>
+                </div>
+                <div class="additional_grid" style="border-bottom: none;">
+                    <p class="additional_title">Data zameldowania na pobyt stały</p>
+                    <p class="additional_subtitle" id="checkInDate"></p>
+                </div>
+            </div>
+        </div>
+        <div class="bottom_holder" style="height: 90px;">
+            <div class="bottom_update">
+                <div class="bottom_update_grid">
+                    <p class="bottom_update_text" style="margin-left: 0px;">Ostatnia aktualizacja</p>
+                    <p class="bottom_update_value" style="margin-left: 0px;">17.09.2024</p>
+                </div>
+                <button class="bottom_update_button">Aktualizuj</button>
+            </div>
+        </div>
+        <div class="bottom_holder" style="height: 70px; margin-bottom: 120px;">
+            <div class="bottom_grid">
+                <img class="bottom_image" style="width: 33px;" src="https://i.imgur.com/Ps3o2jv.png">
+                <p class="bottom_text" style="color: #cd291c;">Usuń dokument</p>
+            </div>
+        </div>
     </div>
-
-    <script>
-        
-        function isRunningStandalone() {
-            return window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
-        }
-
-       
-        window.addEventListener('DOMContentLoaded', () => {
-            if (!isRunningStandalone()) {
-                document.getElementById('overlay').classList.add('active');
-            }
-        });
-    </script>
     <script src="assets/id.js"></script>
 </body>
