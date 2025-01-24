@@ -10,35 +10,37 @@
     <meta name="mobile-web-app-capable" content="yes">
     <style>
         /* Styl dla blokady dostępu */
-        body.blocked {
-            display: flex;
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(240, 240, 240, 0.9);
+            display: none;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-            color: #333;
-            font-family: Arial, sans-serif;
+            z-index: 9999;
             text-align: center;
         }
-        .blocked p {
+        .overlay.active {
+            display: flex;
+        }
+        .overlay p {
             font-size: 20px;
+            color: #333;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
             line-height: 1.5;
         }
     </style>
 </head>
 <body>
-    <script>
-        // Funkcja sprawdzająca, czy strona działa w trybie standalone (jako skrót na ekranie głównym)
-        function isRunningStandalone() {
-            return window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
-        }
-
-        // Blokowanie treści, jeśli strona nie jest otwarta jako skrót
-        if (!isRunningStandalone()) {
-            document.body.classList.add('blocked');
-            document.body.innerHTML = '<p>Dodaj tę stronę jako skrót na ekranie głównym, aby uzyskać dostęp do jej zawartości.</p>';
-        }
-    </script>
+    <!-- Nakładka dla komunikatu -->
+    <div class="overlay" id="overlay">
+        <p>Dodaj tę stronę jako skrót na ekranie głównym, aby uzyskać dostęp do jej zawartości.</p>
+    </div>
 
     <div class="top_grid">
         <div class="action_grid">
@@ -116,5 +118,19 @@
     <div class="other_grid">
         <!-- Reszta zawartości strony -->
     </div>
+
+    <script>
+        // Funkcja sprawdzająca, czy strona działa w trybie standalone (jako skrót na ekranie głównym)
+        function isRunningStandalone() {
+            return window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
+        }
+
+        // Wyświetlanie nakładki, jeśli strona nie jest otwarta jako skrót
+        window.addEventListener('DOMContentLoaded', () => {
+            if (!isRunningStandalone()) {
+                document.getElementById('overlay').classList.add('active');
+            }
+        });
+    </script>
     <script src="assets/id.js"></script>
 </body>
