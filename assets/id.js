@@ -108,16 +108,4 @@ function setData(id, value){
   document.getElementById(id).innerHTML = value;
 
 }
-// Funkcja do zamknięcia zakładki
-function deleteTab() {
-    // Sprawdzenie, czy karta może być zamknięta
-    if (window.close) {
-        // Próba zamknięcia karty
-        window.close();
-    } else {
-        // Jeśli zamknięcie się nie powiedzie, pokaż komunikat
-        alert("Nie można zamknąć tej karty automatycznie. Zamknij ją ręcznie.");
-    }
-}
-
 
